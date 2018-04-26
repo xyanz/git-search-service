@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoSpecialCharsDirective } from './no-special-chars.directive';
+import { GitCodeSearchService } from './git-code-search.service';
 
 const appRoutes: Routes = [
   { path: '', 
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
       appRoutes
     )
   ],
-  providers: [GitSearchService],
+  providers: [GitSearchService, GitCodeSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
