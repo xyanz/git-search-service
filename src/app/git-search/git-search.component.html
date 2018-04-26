@@ -1,6 +1,6 @@
 <h3> {{ title }} - {{ displayQuery }} </h3>
 <form #myForm="ngForm" (ngSubmit)="sendQuery()">
-  <div *ngFor="let key of modelKeys">
+  <div *ngFor="let key of modelKeys" class="queryList" >
     {{key}} 
     <input name="{{key}}" placeholder="Enter {{key}} Here" [(ngModel)]="model[key]" required *ngIf="key === 'q'" appNoSpecialChars/>
     <input name="{{key}}" placeholder="Enter {{key}} Here" [(ngModel)]="model[key]" minlength="2" maxlength="4" *ngIf="key === 'stars'" appNoSpecialChars/>
