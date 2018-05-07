@@ -10,6 +10,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoSpecialCharsDirective } from './no-special-chars.directive';
 import { GitCodeSearchService } from './git-code-search.service';
+import { UnifiedSearchService } from './unified-search.service';
+import { RepositoryDisplayComponent } from './repository-display/repository-display.component';
 
 const appRoutes: Routes = [
   { path: '', 
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     GitSearchComponent,
     HomePageComponent,
     NotFoundComponent,
-    NoSpecialCharsDirective
+    NoSpecialCharsDirective,
+    RepositoryDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ const appRoutes: Routes = [
       appRoutes
     )
   ],
-  providers: [GitSearchService, GitCodeSearchService],
+  providers: [GitSearchService, GitCodeSearchService, UnifiedSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
