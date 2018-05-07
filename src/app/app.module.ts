@@ -13,6 +13,8 @@ import { GitCodeSearchService } from './git-code-search.service';
 import { UnifiedSearchService } from './unified-search.service';
 import { RepositoryDisplayComponent } from './repository-display/repository-display.component';
 import { CodeDisplayComponent } from './code-display/code-display.component';
+import { FadeDirective } from './fade.directive';
+import { FavoriteTextPipe } from './favorite-text.pipe';
 
 const appRoutes: Routes = [
   { path: '', 
@@ -37,7 +39,9 @@ const appRoutes: Routes = [
     NotFoundComponent,
     NoSpecialCharsDirective,
     RepositoryDisplayComponent,
-    CodeDisplayComponent
+    CodeDisplayComponent,
+    FadeDirective,
+    FavoriteTextPipe
   ],
   imports: [
     BrowserModule,
