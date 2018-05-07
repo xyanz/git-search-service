@@ -20,14 +20,11 @@
 .description {
   font-size:18px;
 }
-.createdOn {
-  font-family: monospace;
-}
 .odd { 
-  background-color: white;
+  background-color: rgb(35, 140, 167);
 }
 .even {
-  background-color: silver;
+  background-color: rgb(185, 107, 107);
 }
 .favorite_icon {
   position: relative;

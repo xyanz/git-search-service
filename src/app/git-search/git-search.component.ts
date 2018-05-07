@@ -16,6 +16,7 @@ export class GitSearchComponent implements OnInit {
   searchQuery: string;
   title: string;
   displayQuery: string;
+  favorites: Array<number> = [];
 
   constructor(
     private UnifiedSearchService: UnifiedSearchService,
@@ -40,11 +41,19 @@ export class GitSearchComponent implements OnInit {
   }
   gitSearch = () => {
     this.UnifiedSearchService.unifiedSearch(this.searchQuery).subscribe((response) => {
-      console.log("GitSearch component res " + response)
-      this.searchResults = response.repositories;
+      console.log("GitSearch component response " + response)
+      this.searchResults = response;
     }, (error) => {
       alert("Error: " + error.statusText)
     })
+  }
+
+  checkType = (key) => {
+    return typeof key === 'string' ? 'text' : typeof key;
+  }
+
+  handleFavorite = (id) => {
+    return this.favorites.push(id);
   }
 
   sendQuery = () => {
