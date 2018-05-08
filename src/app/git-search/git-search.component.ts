@@ -41,7 +41,7 @@ export class GitSearchComponent implements OnInit {
   }
   gitSearch = () => {
     this.UnifiedSearchService.unifiedSearch(this.searchQuery).subscribe((response) => {
-      console.log("GitSearch component response " + response)
+      console.log("GitSearch component response " + Object.keys(response))
       this.searchResults = response;
     }, (error) => {
       alert("Error: " + error.statusText)
@@ -53,7 +53,16 @@ export class GitSearchComponent implements OnInit {
   }
 
   handleFavorite = (id) => {
-    return this.favorites.push(id);
+    console.log("handle favorite " + id)
+    let index = this.favorites.indexOf(id);
+    if(index === -1){
+      console.log("Adding favorite " + index)
+      return this.favorites.push(id);
+    }else{
+      console.log("Removing favorite " + id)
+      return this.favorites.splice(index, 1);
+    }
+    
   }
 
   sendQuery = () => {

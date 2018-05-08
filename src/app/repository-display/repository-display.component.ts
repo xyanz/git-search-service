@@ -15,8 +15,16 @@ export class RepositoryDisplayComponent implements OnInit {
   ngOnInit() {
   }
 
-  addFavorite = (item) => {
-    this.updateFavorites.emit(item.id)
+  // toggleFavorite(item) {
+  //   if(this.checkFavorite(item)){
+  //     this.deleteFavorites.emit(item.id);
+  //   } else {
+  //     this.updateFavorites.emit(item.id);
+  //   }
+  // }
+
+  toggleFavorite = (item) => {
+    this.updateFavorites.emit(item.id);
   }
   checkFavorite = (item) => {
     return this.favorites.indexOf(item.id) > -1;
