@@ -41,3 +41,55 @@
 .ng-invalid:not(form)  {
   border: 2px solid #a94442; /* red */
 }
+.display-query {
+    font-family: monospace;
+    font-size: 24px;
+    margin-top: 50px;
+}
+.total {
+  font-family: monospace;
+  color: white;
+  width: auto;
+  background-color: #888888;
+}
+.queryList {
+  margin: 5px auto;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-content: center; */
+  /* align-items: center; */
+  width: 25%;
+  margin: 0 auto;
+  text-align: center;
+
+}
+form > div > input {
+  position: relative;
+  
+  height: 20px;
+  width: 200px;
+  border-radius: 5px;  
+}
+form button {
+    background-color: #555555;
+    color: white;
+    padding: 16px 64px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 42px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+    /* width: 25%; */
+  }
+form  button:hover {
+    background-color: white;
+    color:black;
+    border: 1px solid black;
+  }

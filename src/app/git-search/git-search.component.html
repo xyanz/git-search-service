@@ -1,4 +1,4 @@
-<h3> {{ title }} - {{ displayQuery }} </h3>
+<h3 class="display-query"> {{ title }} - {{ displayQuery }} </h3>
 <form #myForm="ngForm" (ngSubmit)="sendQuery()">
   <div *ngFor="let key of modelKeys" class="queryList" >
     {{key}} 
@@ -6,6 +6,7 @@
     <input name="{{key}}" placeholder="Enter {{key}} Here" [(ngModel)]="model[key]" minlength="2" maxlength="4" *ngIf="key === 'stars'" appNoSpecialChars/>
     <input name="{{key}}" placeholder="Enter {{key}} Here" [(ngModel)]="model[key]" *ngIf="key !== 'q' && key !== 'stars'" appNoSpecialChars/>
   </div>
+
   <button type="submit" [disabled]="!myForm.valid">Submit</button>
 </form>
   <div *ngIf="searchResults; else elseBlock">
@@ -15,5 +16,5 @@
       <app-code-display [searchResults]="searchResults.code" [favorites]="favorites" (updateFavorites)="handleFavorite($event)" *ngIf="searchResults.code" [appFade]="true"></app-code-display>
     </ul>
   </div>
-<ng-template [ngIf]="searchResults.repositories.total_count == 0">No Matches</ng-template>
+<ng-template [ngIf]="searchResults.repositories.total_count == 0" class="alert alert-danger"><h1>No Matches</h1></ng-template>
 <ng-template #elseBlock><h1>Loading...</h1></ng-template>

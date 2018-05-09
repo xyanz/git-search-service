@@ -15,6 +15,7 @@ import { RepositoryDisplayComponent } from './repository-display/repository-disp
 import { CodeDisplayComponent } from './code-display/code-display.component';
 import { FadeDirective } from './fade.directive';
 import { FavoriteTextPipe } from './favorite-text.pipe';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: '', 
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot(
       appRoutes
     )

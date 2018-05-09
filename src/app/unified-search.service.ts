@@ -31,7 +31,6 @@ export class UnifiedSearchService {
     return Observable.forkJoin(this.searchService.gitSearch(query), this.codeSearchService.codeSearch(query))
     //construct observable object with both responses mapped to own property
     .map( (response : [GitSearch, GitCodeSearch]) => {
-      console.log("Response " + response)
       return {
         'repositories' : response[0],
         'code' : response[1]
